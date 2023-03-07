@@ -17,10 +17,10 @@
 * Validation of all forms
 
 ### Pop-up window for profile editing:
-![popup edit](./screens/edit-popup.png =250x345)
+![popup edit](./screens/edit-popup.png)
 
 ### Pop-up window to confirm deletion of a comment:
-![popup confirm](./screens/confirm-popup.png =250x345)
+![popup confirm](./screens/confirm-popup.png)
 
 ### Features:
 * Responsive layout
