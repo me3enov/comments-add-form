@@ -1,4 +1,4 @@
-# Проект "comments-add-form"
+# Project "comments-add-form"
 
 ## To run the project use - "make run".
 
@@ -17,10 +17,10 @@
 * Validation of all forms
 
 ### Pop-up window for profile editing:
-![popup edit](./screens/edit-popup.png)
+![popup edit](./screens/edit-popup.png | width=300)
 
 ### Pop-up window to confirm deletion of a comment:
-![popup confirm](./screens/confirm-popup.png)
+![popup confirm](./screens/confirm-popup.png | width=300)
 
 ### Features:
 * Responsive layout
