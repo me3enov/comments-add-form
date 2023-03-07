@@ -4,12 +4,12 @@ export default class Popup {
     this._popupSelector = selector;
     this._popup = document.querySelector(this._popupSelector);
 
-    this._closeButtonClass = 'popup__close-button'
-    this._popupOpenedClass = 'popup_opened'
+    this._closeButtonClass = 'popup__close-button';
+    this._popupOpenedClass = 'popup_opened';
 
     this._handleClickClose = this._handleClickClose.bind(this);
     this._handleEscClose = this._handleEscClose.bind(this);
-    }
+  }
 
   //open popup
   open() {
@@ -32,7 +32,7 @@ export default class Popup {
 
   //close popup by "Esc"
   _handleEscClose(evt) {
-    if (evt.key === "Escape" || evt.key === "Esc") {
+    if (evt.key === 'Escape' || evt.key === 'Esc') {
       this.close();
     }
   }

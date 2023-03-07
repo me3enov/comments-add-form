@@ -3,29 +3,29 @@ import PopupWithFormDefault from './PopupWithFormDefault.js';
 
 //extends "PopupWithFormDefault"
 export class PopupWithConfirm extends PopupWithFormDefault {
-    //constructor for the "PopupWithFormDefault" class
-    constructor(settings) {
-        super(settings);
-    }
+  //constructor for the "PopupWithFormDefault" class
+  constructor(settings) {
+    super(settings);
+  }
 
-    //if submit form
-    _submitEvtHandler() {
-        this._submit(this._commentData);
-        this._form.removeEventListener('submit', this._submitEvtHandler);
-    }
+  //if submit form
+  _submitEvtHandler() {
+    this._submit(this._commentData);
+    this._form.removeEventListener('submit', this._submitEvtHandler);
+  }
 
-    //set event listeners the "PopupWithConfirm" class
-    setEventListeners() {
-        super.setEventListeners();
-        this._form.addEventListener('submit', (evt) => {
-            evt.preventDefault();
-            this._submitEvtHandler();
-        });
-    }
+  //set event listeners the "PopupWithConfirm" class
+  setEventListeners() {
+    super.setEventListeners();
+    this._form.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      this._submitEvtHandler();
+    });
+  }
 
-    //open popup "PopupWithConfirm" class
-    open(commentData) {
-        super.open();
-        this._commentData = commentData;
-    }
+  //open popup "PopupWithConfirm" class
+  open(commentData) {
+    super.open();
+    this._commentData = commentData;
+  }
 }

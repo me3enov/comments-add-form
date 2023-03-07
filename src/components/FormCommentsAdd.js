@@ -1,6 +1,6 @@
 export class FormCommentsAdd {
   //constructor for the "FormCommentsAdd" class
-  constructor({selector, submit, getUserData, ownerId, uuid}) {
+  constructor({ selector, submit, getUserData, ownerId, uuid }) {
     this._formSelector = selector;
     this._form = document.querySelector(this._formSelector);
     this._submit = submit;
@@ -24,25 +24,26 @@ export class FormCommentsAdd {
   //set user info
   setUserInfo(userInfo) {
     this._userNameElement.textContent = userInfo.name;
-    if (userInfo.link !== '') this._userAvatarElement.style.backgroundImage = `url(${userInfo.link})`;
+    if (userInfo.link !== '')
+      this._userAvatarElement.style.backgroundImage = `url(${userInfo.link})`;
   }
 
   //get values
   _getValues() {
     const inputsList = Array.from(this._form.querySelectorAll('.comments-add-form__input'));
     const data = {};
-    const userData = this._getUserData()
-    inputsList.forEach(input => {
+    const userData = this._getUserData();
+    inputsList.forEach((input) => {
       data[input.name] = input.value;
-    })
+    });
     data.owner = {
       id: this._ownerId
     };
-    data.id = this._uuid()
+    data.id = this._uuid();
     data.likes = [];
-    data.name = userData.name
-    data.date = userData.date
-    data.link = userData.link
+    data.name = userData.name;
+    data.date = userData.date;
+    data.link = userData.link;
 
     return data;
   }
