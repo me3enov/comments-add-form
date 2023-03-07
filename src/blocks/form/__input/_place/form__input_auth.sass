@@ -1,0 +1,16 @@
+.form__input_auth
+  width: 100%
+  box-sizing: border-box
+  display: flex
+  border: 0
+  border-bottom: 1px solid $gray33
+  background-color: transparent
+  margin: 0 0 30px
+  padding: 6px 0
+  @extend %transition
+  @include setFontStyle (400, 14px, 16px, 0)
+  &::placeholder
+    @include setFontStyle (400, 14px, 16px, 0)
+    color: $gray33
+  &:focus, &:hover
+    border-color: $accentDark

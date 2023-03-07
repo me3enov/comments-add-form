@@ -1,0 +1,7 @@
+.comments-add-form__auth-button
+  max-width: 540px
+  @extend %overflow
+  @include setFontStyle (400, 12px, 14px, 0)
+  @extend %transition
+  @include for-phone-only
+    max-width: calc(100vw - ($maxPadding * 3) - 40px - 100px)

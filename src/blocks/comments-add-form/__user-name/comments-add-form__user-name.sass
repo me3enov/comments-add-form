@@ -1,0 +1,6 @@
+.comments-add-form__user-name
+  max-width: 540px
+  @extend %overflow
+  @include setFontStyle (700, 13px, 16px, 0)
+  @include for-phone-only
+    max-width: calc(100vw - ($maxPadding * 3) - 40px - 100px)

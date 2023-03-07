@@ -1,0 +1,12 @@
+.comments-add-form__user-button
+  max-width: 580px
+  display: grid
+  grid-template-columns: 30px auto
+  column-gap: 10px
+  align-items: center
+  justify-content: start
+  cursor: pointer
+  &:hover .comments-add-form__auth-button, &:focus .comments-add-form__auth-button
+    color: $accentDark
+  @include for-phone-only
+    max-width: calc(100vw - ($maxPadding * 3))

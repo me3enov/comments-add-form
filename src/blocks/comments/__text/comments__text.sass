@@ -1,0 +1,8 @@
+.comments__text
+  width: 100%
+  max-width: 680px
+  @include setLineClamp (12)
+  margin-top: $minPadding
+  @include setFontStyle (500, 16px, 24px, 0)
+  @include for-phone-only
+    max-width: calc(100vw - ($maxPadding * 3))
