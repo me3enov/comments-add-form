@@ -27,7 +27,7 @@ const footerCopyright = document.querySelector('.footer__copyright');
 const getAllComments = () => Array.from(document.querySelectorAll('.comments__item'));
 const setCommentsCounts = () =>
   getAllComments().length < 2
-    ? `${getAllComments().length} Comment`
+    ? getAllComments().length === 0 ? 'Comments' : `${getAllComments().length} Comment`
     : `${getAllComments().length} Comments`;
 const getUserData = () =>
   Object.keys(userDataResult).length === 0 ? userDataDefault : userDataResult;
