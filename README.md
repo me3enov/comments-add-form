@@ -4,13 +4,13 @@
 
 https://me3enov.github.io/comments-add-form/
 
-### Screen demonstration:
-
-![main page](./screens/main.png)
-
 ### Controls:
 - Use "Shift + Enter" to break a new line
 - Use "Enter" to post a comment
+
+### Screen demonstration:
+
+![main page](./screens/main.png)
 
 ### Functional:
 
