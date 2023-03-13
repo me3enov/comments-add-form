@@ -6,7 +6,6 @@ import { PopupWithForm } from '../components/PopupWithForm';
 import { FormCommentsAdd } from '../components/FormCommentsAdd';
 import { formatDate } from '../untils/formatDate';
 import { setLike, removeLike } from '../untils/liked';
-import { Textarea } from '../components/Textarea';
 import { FormValidator } from '../components/FormValidator';
 import { PopupWithConfirm } from '../components/PopupWithConfirm';
 
@@ -68,10 +67,12 @@ const createComment = (commentData) => {
 };
 
 //add post form submit
-function addComment(commentData) {
+function addComment(commentData, form) {
   const comment = createComment(commentData);
   comments.addItem(comment, 'prepend');
   headerTitle.textContent = setCommentsCounts();
+  form.reset();
+  commentsAddForm.clearValidation();
 }
 
 //remove comment submit
@@ -101,15 +102,14 @@ const popupConfirm = new PopupWithConfirm({
   submit: removeComment
 });
 popupConfirm.setEventListeners();
-const arr = [];
+
 //form add comments init
 const formCommentsAdd = new FormCommentsAdd({
   selector: '.comments-add-form__form',
   submit: addComment,
   getUserData,
   ownerId: user.id,
-  uuid,
-  arr
+  uuid
 });
 formCommentsAdd.setEventListeners();
 
@@ -117,12 +117,6 @@ buttonEditProfile.addEventListener('click', () => {
   popupEditUser.open();
   formEditProfile.clearValidation();
 });
-
-//textarea auto grow init
-const textarea = new Textarea({
-  selector: '.comments-add-form__textarea'
-});
-// render all
 
 //ENABLE FORMS VALIDATION START
 //enable validation comments add form

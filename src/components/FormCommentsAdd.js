@@ -6,9 +6,15 @@ export class FormCommentsAdd {
     this._submit = submit;
 
     this._submitEvtHandler = this._submitEvtHandler.bind(this);
+    this._submitOnEnter = this._submitOnEnter.bind(this);
 
+    this._buttonSubmit = this._form.querySelector('.button__submit');
     this._userNameElement = this._form.querySelector('.comments-add-form__user-name');
     this._userAvatarElement = this._form.querySelector('.comments-add-form__user-avatar');
+    this._textarea = document.querySelector('.comments-add-form__textarea');
+    this._textarea.oninput = () => {
+      this._autoGrow();
+    };
     this._getUserData = getUserData;
     this._ownerId = ownerId;
     this._uuid = uuid;
@@ -17,8 +23,25 @@ export class FormCommentsAdd {
   //if submit evt handler
   _submitEvtHandler(evt) {
     evt.preventDefault();
-    this._submit(this._getValues());
-    this._form.reset();
+    this._textarea.style.height = '40px';
+    this._submit(this._getValues(), this._form);
+  }
+
+  //if press 'enter'
+  _submitOnEnter(evt) {
+    if (evt.key === 'Enter' && !evt.shiftKey) {
+      if (this._buttonSubmit.disabled === false) {
+        const newEvent = new Event('submit', this._submitEvtHandler);
+        evt.target.form.dispatchEvent(newEvent);
+      }
+      evt.preventDefault();
+    }
+  }
+
+  //auto grow
+  _autoGrow() {
+    this._textarea.style.height = '40px';
+    this._textarea.style.height = this._textarea.scrollHeight + 'px';
   }
 
   //set user info
@@ -51,5 +74,6 @@ export class FormCommentsAdd {
   //set event listeners "FormCommentsAdd" class popup
   setEventListeners() {
     this._form.addEventListener('submit', this._submitEvtHandler);
+    this._textarea.addEventListener('keydown', this._submitOnEnter);
   }
 }
