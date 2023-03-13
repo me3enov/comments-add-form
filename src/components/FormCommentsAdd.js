@@ -23,7 +23,7 @@ export class FormCommentsAdd {
   //if submit evt handler
   _submitEvtHandler(evt) {
     evt.preventDefault();
-    this._textarea.style.height = '40px';
+    this._textarea.style.height = '20px';
     this._submit(this._getValues(), this._form);
   }
 
@@ -40,7 +40,7 @@ export class FormCommentsAdd {
 
   //auto grow
   _autoGrow() {
-    this._textarea.style.height = '40px';
+    this._textarea.style.height = '20px';
     this._textarea.style.height = this._textarea.scrollHeight + 'px';
   }
 

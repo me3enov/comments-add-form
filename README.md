@@ -8,6 +8,10 @@ https://me3enov.github.io/comments-add-form/
 
 ![main page](./screens/main.png)
 
+### Controls:
+- Use "Shift + Enter" to break a new line
+- Use "Enter" to post a comment
+
 ### Functional:
 
 - Adding and deleting a comment
@@ -29,7 +33,8 @@ https://me3enov.github.io/comments-add-form/
 ![popup confirm](./screens/confirm-popup.png)
 
 ### Features:
-
+- Using textarea instead of input
+- Autoresize height textarea
 - Responsive layout
 - All text is overflow protected
 - Optimized icons
