@@ -1,6 +1,8 @@
 # Project "comments-add-form"
 
-## To run the project use - "make run".
+### Deploy in GitHub Pages:
+
+https://me3enov.github.io/comments-add-form/
 
 ### Screen demonstration:
 
@@ -53,6 +55,21 @@
 - Flexbox
 - Grid Layout
 - Git
+
+### Commands:
+- **make install** - Clean install a project
+
+- **make run** - webpack serve --open
+
+- **make build** - webpack --mode production
+
+- **make deploy** - build & deploy project in GitHub Pages
+
+- **make lint** - Find problems
+
+- **make lint-fix** - Find and fix problems
+
+- **make format** - prettier format
 
 ### Language:
 
